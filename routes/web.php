@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::inertia('/', 'Index');
+
+Route::resource('/post', PostController::class);
+Route::get('/post/{id}/show', [PostController::class, 'showPost']);
