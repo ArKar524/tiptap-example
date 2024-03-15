@@ -9,7 +9,6 @@
             </div>
 
             <div class="mb-2">
-                <label for="content" class="text-black text-xl">Content</label>
                 <Editor v-model="form.content" />
                 <span v-if="form.errors.content" class="text-red-500">{{ form.errors.content }}</span>
             </div>

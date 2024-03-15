@@ -1,4 +1,5 @@
 <template>
+    <Label for="content" class="text-xl">Content</Label>
     <section
         class="flex flex-wrap  px-4 py-3 border-t text-gray-600 border-r rounded-b-none border-l rounded border-gray-400"
         v-if="editor">
@@ -72,6 +73,7 @@ import BulletList from '@tiptap/extension-bullet-list'
 import CodeBlock from '@tiptap/extension-code-block'
 import Blockquote from '@tiptap/extension-blockquote'
 import HorizontalRule from '@tiptap/extension-horizontal-rule'
+import Image from '@tiptap/extension-image'
 import BoldIcon from 'vue-material-design-icons/FormatBold.vue';
 import ItalicIcon from 'vue-material-design-icons/FormatItalic.vue';
 import UnderlineIcon from 'vue-material-design-icons/FormatUnderline.vue';
@@ -87,8 +89,6 @@ import RedoIcon from 'vue-material-design-icons/Redo.vue';
 // ================================================================
 
 
-
-// ================================================
 
 const props = defineProps({
     modelValue: String,
