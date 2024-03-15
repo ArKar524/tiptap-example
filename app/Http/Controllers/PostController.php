@@ -31,6 +31,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required|min:1',
+        ]);
         Post::create([
             'title' => $request->title,
             'content' => $request->content
@@ -45,9 +49,10 @@ class PostController extends Controller
     {
         // dd($id);
         $post = Post::findOrFail($id);
-        dd($post);
-
+        // dd($post);
+        return Inertia::render('Show', ['post' => $post]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
